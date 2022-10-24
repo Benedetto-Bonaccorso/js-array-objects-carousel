@@ -14,6 +14,7 @@ let screens = [
 ];
 let imgContainer = document.getElementById("imgContainer")
 let counter = 0
+let autoplaying = true
 
 for(let i = 0; i < screens.length; i++){
     imgContainer.innerHTML += `<img src="${screens[i].Image}" id="${i}" class="invisible">`
@@ -24,6 +25,21 @@ let firstImage = document.getElementById("0")
 let firstTitle = document.getElementById("T0")
 firstImage.classList.remove("invisible")
 firstTitle.classList.remove("invisible")
+
+/*
+function autoplayer(){
+    autoplaying = !autoplaying
+    console.log(autoplaying)
+}
+*/
+
+function autoplay(){
+    if(autoplaying == true){
+        setInterval(counterUp, 3000)
+    }
+}
+
+autoplay()
 
 function counterUp(){
     counter++
