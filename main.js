@@ -13,6 +13,7 @@ let screens = [
     Title: "Avengers"}
 ];
 let imgContainer = document.getElementById("imgContainer")
+let thumbs = document.getElementById("thumbs")
 let counter = 0
 let autoplaying = true
 
@@ -33,9 +34,17 @@ function autoplayer(){
 }
 */
 
+function thumbsPlacer(){
+    for(let i = 0; i < screens.length; i++){
+        thumbs.innerHTML += `<img src="${screens[i].Image}" id="M${i}">`
+    }
+}
+
+thumbsPlacer()
+
 function autoplay(){
     if(autoplaying == true){
-        setInterval(counterUp, 3000)
+        setInterval(counterUp, 10000)
     }
 }
 
